@@ -1,7 +1,9 @@
 import React from 'react'
 import { ThemeToggle } from '../components/ThemeToggle'
 import { Navbar } from '../components/Navbar'
-import  Projectile2D  from '../components/projectile2D'
+import { Projectile2D } from '../components/projectile2D'
+
+
 
 
 
