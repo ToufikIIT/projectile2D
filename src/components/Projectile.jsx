@@ -25,10 +25,11 @@ export const Projectile = () => {
       <div className="app-container text-center">
         <h1 className="text-3xl font-bold mt-4">Projectile Motion Simulator</h1>
 
-        <div className="flex flex-row justify-center gap-6 mt-6 items-center flex-wrap">
+        <div className="flex flex-col sm:flex-row justify-center gap-6 mt-6 items-center text-center">
           <label>
             Angle (°)
             <input
+              className='w-40 md:w-52'
               type="range"
               min="0"
               max="90"
@@ -41,6 +42,7 @@ export const Projectile = () => {
           <label>
             Speed (m/s)
             <input
+              className='w-40 md:w-52'
               type="range"
               min="1"
               max="100"
@@ -52,7 +54,7 @@ export const Projectile = () => {
 
           <label>
             Gravity (m/s²)
-            <input
+            <input className='w-40 md:w-52'
               type="range"
               min="1"
               max="20"
@@ -65,14 +67,14 @@ export const Projectile = () => {
 
           <button
             onClick={handleLaunch}
-            className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
+            className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 w-full sm:w-auto"
           >
             Launch
           </button>
 
           <button
             onClick={handleReset}
-            className="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700"
+            className="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700 w-full sm:w-auto"
           >
             Reset
           </button>

@@ -13,9 +13,14 @@ const ProjectileCanvas = ({ angle, speed, gravity, launch, reset }) => {
     let totalRange = useRef(0);
 
     useEffect(() => {
+        
+
         const canvas = canvasRef.current;
         const ctx = canvas.getContext('2d');
         const origin = { x: 50, y: canvas.height - 30 };
+
+        /* canvas.width = canvas.offsetWidth;
+        canvas.height = 500; */
 
         let x = 0;
         let y = 0;
@@ -159,18 +164,18 @@ const ProjectileCanvas = ({ angle, speed, gravity, launch, reset }) => {
     };
 
     return (
-        <div style={{ textAlign: 'center' }} className='container gap-3 ml-50 mt-10'>
+        <div style={{ textAlign: 'center' }} className='canvas-container gap-3 align-middle mt-10'>
             <canvas ref={canvasRef} width={1000} height={500}></canvas>
-            <div style={{ marginTop: '20px', fontFamily: 'monospace' }} className='mr-90'>
-                <strong>Time:</strong> {info.t}s |
-                <strong> X:</strong> {info.x} m |
-                <strong> Y:</strong> {info.y} m |
-                <strong> Vx:</strong> {info.vx} m/s |
+            <div style={{ marginTop: '20px', fontFamily: 'monospace' }} className='flex flex-row gap-3 '>
+                <strong>Time:</strong> {info.t}s 
+                <strong> X:</strong> {info.x} m
+                <strong> Y:</strong> {info.y} m 
+                <strong> Vx:</strong> {info.vx} m/s 
                 <strong> Vy:</strong> {info.vy} m/s
             </div>
-            <div style={{ marginTop: '20px' }} className='mr-90'>
+            <div style={{ marginTop: '20px' }} className='mr-90 flex gap-3'>
                 <button onClick={handlePauseResume} style={btnStyle}>
-                    {isPaused ? 'Resume' : 'Pause'}
+                    {isPaused ? 'Startover' : 'Pause'}
                 </button>
                 <button onClick={handleStop} style={btnStyle}>
                     Stop

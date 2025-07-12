@@ -12,14 +12,22 @@ body {
 }
 
 /* Canvas styling */
-canvas {
-    border: 2px solid #1976d2;
-    border-radius: 8px;
-    background-color: white;
-    box-shadow: 0 0 10px rgba(25, 118, 210, 0.3);
-    max-width: 100%;
-    height: auto;
+.canvas-container {
+  width: 100%;
+  overflow-x: auto;
+  padding: 10px;
 }
+
+canvas {
+  width: 100%;
+  max-width: 1400px;
+  height: auto;
+  border: 2px solid #1976d2;
+  border-radius: 8px;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(25, 118, 210, 0.3);
+}
+
 
 /* Info panel */
 .info-panel {
