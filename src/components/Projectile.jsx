@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import ProjectileCanvas from "../projectilecanvas";
 import '../App.css';
-export const Projectile2D = () => {
+
+
+export const Projectile = () => {
   const [angle, setAngle] = useState(45);
   const [speed, setSpeed] = useState(50);
   const [gravity, setGravity] = useState(9.8);
