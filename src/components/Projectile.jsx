@@ -21,70 +21,72 @@ export const Projectile = () => {
   };
 
   return (
-    <div className="app-container text-center">
-      <h1 className="text-3xl font-bold mt-4">Projectile Motion Simulator</h1>
+    <section id='hero'>
+      <div className="app-container text-center">
+        <h1 className="text-3xl font-bold mt-4">Projectile Motion Simulator</h1>
 
-      <div className="flex flex-row justify-center gap-6 mt-6 items-center flex-wrap">
-        <label>
-          Angle (°)
-          <input
-            type="range"
-            min="0"
-            max="90"
-            value={angle}
-            onChange={(e) => setAngle(Number(e.target.value))}
-          />
-          <span className="ml-2">{angle}</span>
-        </label>
+        <div className="flex flex-row justify-center gap-6 mt-6 items-center flex-wrap">
+          <label>
+            Angle (°)
+            <input
+              type="range"
+              min="0"
+              max="90"
+              value={angle}
+              onChange={(e) => setAngle(Number(e.target.value))}
+            />
+            <span className="ml-2">{angle}</span>
+          </label>
 
-        <label>
-          Speed (m/s)
-          <input
-            type="range"
-            min="1"
-            max="100"
-            value={speed}
-            onChange={(e) => setSpeed(Number(e.target.value))}
-          />
-          <span className="ml-2">{speed}</span>
-        </label>
+          <label>
+            Speed (m/s)
+            <input
+              type="range"
+              min="1"
+              max="100"
+              value={speed}
+              onChange={(e) => setSpeed(Number(e.target.value))}
+            />
+            <span className="ml-2">{speed}</span>
+          </label>
 
-        <label>
-          Gravity (m/s²)
-          <input
-            type="range"
-            min="1"
-            max="20"
-            step="0.1"
-            value={gravity}
-            onChange={(e) => setGravity(Number(e.target.value))}
-          />
-          <span className="ml-2">{gravity}</span>
-        </label>
+          <label>
+            Gravity (m/s²)
+            <input
+              type="range"
+              min="1"
+              max="20"
+              step="0.1"
+              value={gravity}
+              onChange={(e) => setGravity(Number(e.target.value))}
+            />
+            <span className="ml-2">{gravity}</span>
+          </label>
 
-        <button
-          onClick={handleLaunch}
-          className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
-        >
-          Launch
-        </button>
+          <button
+            onClick={handleLaunch}
+            className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
+          >
+            Launch
+          </button>
 
-        <button
-          onClick={handleReset}
-          className="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700"
-        >
-          Reset
-        </button>
+          <button
+            onClick={handleReset}
+            className="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700"
+          >
+            Reset
+          </button>
+        </div>
+
+        <ProjectileCanvas
+          angle={angle}
+          speed={speed}
+          gravity={gravity}
+          launch={shouldLaunch}
+          reset={resetTrigger}
+        />
       </div>
-
-      <ProjectileCanvas
-        angle={angle}
-        speed={speed}
-        gravity={gravity}
-        launch={shouldLaunch}
-        reset={resetTrigger}
-      />
-    </div>
+    </section>
   );
 }
 
